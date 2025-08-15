@@ -1,7 +1,44 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# Genres
+pop = Genre.create!(name: 'Pop')
+rock = Genre.create!(name: 'Rock')
+hip_hop = Genre.create!(name: 'Hip Hop')
+country = Genre.create!(name: 'Country')
+jazz = Genre.create!(name: 'Jazz')
+electronic = Genre.create!(name: 'Electronic')
+classical = Genre.create!(name: 'Classical')
+rnb = Genre.create!(name: 'R&B')
+
+# Artists
+taylor = Artist.create!(name: 'Taylor Swift',
+                        bio: 'American singer-songwriter known for narrative songs about her personal life.')
+kendrick = Artist.create!(name: 'Kendrick Lamar', bio: 'American rapper, songwriter, and record producer.')
+johnny = Artist.create!(name: 'Johnny Cash', bio: 'American singer-songwriter, guitarist, actor, and author.')
+beyonce = Artist.create!(name: 'Beyoncé', bio: 'American singer, songwriter, and actress.')
+drake = Artist.create!(name: 'Drake', bio: 'Canadian rapper, singer, and actor.')
+adele = Artist.create!(name: 'Adele', bio: 'English singer-songwriter.')
+beatles = Artist.create!(name: 'The Beatles', bio: 'English rock band formed in Liverpool in 1960.')
+miles = Artist.create!(name: 'Miles Davis', bio: 'American jazz trumpeter, bandleader, and composer.')
+avicii = Artist.create!(name: 'Avicii', bio: 'Swedish DJ, remixer, and record producer.')
+mozart = Artist.create!(name: 'Wolfgang Amadeus Mozart', bio: 'Influential composer of the Classical era.')
+
+# Songs
+Song.create!(name: 'Blank Space', artist: taylor, genre: pop)
+Song.create!(name: 'HUMBLE.', artist: kendrick, genre: hip_hop)
+Song.create!(name: 'Ring of Fire', artist: johnny, genre: country)
+Song.create!(name: 'Bad Blood', artist: taylor, genre: pop)
+Song.create!(name: 'Alright', artist: kendrick, genre: hip_hop)
+Song.create!(name: 'Folsom Prison Blues', artist: johnny, genre: country)
+Song.create!(name: 'Halo', artist: beyonce, genre: pop)
+Song.create!(name: 'Formation', artist: beyonce, genre: rnb)
+Song.create!(name: "God's Plan", artist: drake, genre: hip_hop)
+Song.create!(name: 'Hotline Bling', artist: drake, genre: rnb)
+Song.create!(name: 'Rolling in the Deep', artist: adele, genre: pop)
+Song.create!(name: 'Hello', artist: adele, genre: pop)
+Song.create!(name: 'Hey Jude', artist: beatles, genre: rock)
+Song.create!(name: 'Let It Be', artist: beatles, genre: rock)
+Song.create!(name: 'So What', artist: miles, genre: jazz)
+Song.create!(name: 'Freddie Freeloader', artist: miles, genre: jazz)
+Song.create!(name: 'Wake Me Up', artist: avicii, genre: electronic)
+Song.create!(name: 'Levels', artist: avicii, genre: electronic)
+Song.create!(name: 'Symphony No. 40', artist: mozart, genre: classical)
+Song.create!(name: 'Eine kleine Nachtmusik', artist: mozart, genre: classical)
