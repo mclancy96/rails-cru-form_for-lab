@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :genre, except: :destroy
-  resources :artist, except: :destroy
-  resources :song, except: :destroy
+  resources :genres, except: :destroy
+  resources :artists, except: :destroy
+  resources :songs, except: :destroy
 end
