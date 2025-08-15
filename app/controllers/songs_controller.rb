@@ -25,7 +25,7 @@ class SongsController < ApplicationController
   private
 
   def set_song
-    @song = Song.find(params[:id])
+    @song = Song.includes(:genre, :artist).find(params[:id])
   end
 
   def song_params
