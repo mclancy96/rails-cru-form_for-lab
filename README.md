@@ -1,15 +1,15 @@
-# CRU with form_for Lab
+# CRU with form_with Lab
 
 ## Objectives
 
 1. Build RESTful actions for index, show, new, create, edit, update
-2. Use form_for for all forms (no need to share forms or partials)
+2. Use form_with for all forms (no need to share forms or partials)
 3. Correctly redirect when needed
 4. Interlink between pages using route helpers
 
 ## Instructions
 
-You've been tasked with building a Rails app called **Beats by Rails**, the app will need to have three separate models:
+You've been tasked with building a Rails app called **Beats by Rails**. The app will need to have three separate models:
 
 * Songs
 
@@ -17,7 +17,7 @@ You've been tasked with building a Rails app called **Beats by Rails**, the app 
 
 * Genres
 
-The data relationship will look something like this:
+The data relationship will look like this:
 
 * A song belongs to an artist
 
@@ -27,10 +27,12 @@ The data relationship will look something like this:
 
 * An artist has many songs
 
-
-The tests are in the `spec/features` directory for each model. You will need to build in the ability to `create`, `update`, and `show` for each model. And for the song `show` page you need to have it display each of the song's genre and artist, and link to the respective genre and artist `show` pages.
+The tests are in the `spec/features` directory for each model. You will need to build the ability to `create`, `update`, and `show` for each model. For the song `show` page, display the song's genre and artist, and link to their respective `show` pages.
 
 The database tables should look like this (note each column type):
+
+table "genres"
+table "songs"
 
 ```db
 table "artists"
@@ -46,12 +48,11 @@ table "songs"
   integer  "genre_id"
 ```
 
-## Key notes to remember
+## Key Notes
 
-* You will need to use [strong params](https://github.com/learn-co-curriculum/strong-params-basics)
-
-* Don't worry about integrating drop down form elements for the genre and artist selections on the song form pages yet, simply enter in the ID in for each element
-
-* You can use the `resource`, `model`, `migration`, and `controller` generators, but do not use the `scaffold` generator
-*Top Tip: Remember to use the --no-test-framework flag when generating models and controllers to avoid generating unnecessary testing frameworks!*
-
+* Use [strong params](https://guides.rubyonrails.org/action_controller_overview.html#strong-parameters).
+* For now, enter the `artist_id` and `genre_id` manually in the song form (no dropdowns yet).
+* Use the `resource`, `model`, `migration`, and `controller` generators, but avoid the `scaffold` generator (it generates too much code automatically and doesn't help you learn the fundamentals).
+  * *Top Tip: Remember to use the --no-test-framework flag when generating models and controllers to avoid generating unnecessary testing frameworks!*
+* Use `bin/rails` for all commands (not `rake` or just `rails`).
+* All forms should use `form_with` (not `form_for` or `form_tag`).

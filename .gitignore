@@ -36,8 +36,18 @@ jspm_packages
 /.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+/db/*.sqlite3*
+
+# Rails sensitive and unnecessary files
+/log/*
+/tmp/*
+/config/master.key
+/config/credentials*
+/public/assets
+/public/packs
+/node_modules
+/yarn-error.log
+/coverage
 
 # Ignore all logfiles and tempfiles.
 /log/*
